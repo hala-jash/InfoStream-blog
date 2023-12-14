@@ -52,9 +52,7 @@ const SingleArticle = () => {
               </p>
             </div>
           </div>
-              )}
-              
-              
+        )}
       </main>
       <aside></aside>
     </div>
