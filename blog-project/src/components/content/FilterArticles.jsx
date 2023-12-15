@@ -82,7 +82,7 @@ const FilterArticles = () => {
         handleTopicClick={handleTopicClick}
         fetchAllArticles={fetchAllArticles}
       />
-
+      <div className='drop-down'>
       <select value={sortBy} onChange={handleSortByChange}>
         <option value=''>Sort by</option>
         <option value='title'>Title</option>
@@ -90,13 +90,16 @@ const FilterArticles = () => {
         <option value='created_at'>Created At</option>
         <option value='votes'>Votes</option>
         <option value='topic'>Topic</option>
-      </select>
-
-      <select value={order} onChange={handleOrderChange}>
+        </select>
+        <select value={order} onChange={handleOrderChange}>
         <option value=''>Order</option>
         <option value='ASC'>Ascending</option>
         <option value='DESC'>Descending</option>
       </select>
+</div>
+
+
+
 
       <h2 className='h2'>{showAllArticles ? 'All Articles' : selectTopic}</h2>
       <ArticlePreview selectTopic={selectTopic} articles={articles} />

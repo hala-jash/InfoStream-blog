@@ -41,6 +41,12 @@ export default function ArticlePreview({ articles }) {
                       alt={article.title}
                       className='article-img'
                     />
+                  </div>
+                  <div className='article-info'>
+                    <h2>{limitText(article.title, 5)}...</h2>
+
+                    <p className='bodyText'>{article.body}</p>
+
                     <div className='article-userInfo'>
                       <div className='user-info'>
                         {authorUser && (
@@ -55,25 +61,20 @@ export default function ArticlePreview({ articles }) {
                         <p className='user-name'>{article.author}</p>
                       </div>
                       <div className='article-about'>
-                        <p>{formatDate(article.created_at)}</p>
-                        <div>
-                          <FontAwesomeIcon icon={faTag} />
+                        <p className='date'>{formatDate(article.created_at)}</p>
+                        <button className='topic-bt'>
                           {article.topic}
-                        </div>
+                          <FontAwesomeIcon icon={faTag} className='svg' />
+                        </button>
                       </div>
+                      <button className='button'>
+                        <FontAwesomeIcon
+                          icon={faThumbsUp}
+                          className='fa-regular'
+                        />
+                        {article.votes}
+                      </button>
                     </div>
-                  </div>
-                  <div className='article-info'>
-                    <h2>{limitText(article.title, 5)}...</h2>
-
-                    <p className='bodyText'>{article.body}</p>
-                    <p>
-                      <FontAwesomeIcon
-                        icon={faThumbsUp}
-                        className='fa-regular'
-                      />
-                      {article.votes}
-                    </p>
                   </div>
                 </div>
               </Link>

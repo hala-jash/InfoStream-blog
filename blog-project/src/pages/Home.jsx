@@ -40,17 +40,17 @@ export default function Home() {
             <div key={article.article_id}>
               <div className='article'>
                 <div className='article-image'>
-                  <img
-                    src={article.article_img_url}
-                    alt={article.title}
-                    className='image'
-                  />
+                  <img src={article.article_img_url} alt={article.title} />
                 </div>
                 <div className='article-info'>
                   <h3>{limitText(article.title, 5)} ...</h3>
-                  <button>{article.topic}</button>
-                  <p>{article.author}</p>
-                  <p>{formatDate(article.created_at)}</p>
+
+                  <div className='article-userInfo'>
+                    <button className='topic-bt'>{article.topic}</button>
+                    <p>By: {article.author}</p>
+                    <p className='date'>{formatDate(article.created_at)}</p>
+                  </div>
+
                   <p className='bodyText'>{article.body}</p>
                   <p>
                     <FontAwesomeIcon icon={faThumbsUp} className='fa-regular' />
@@ -71,7 +71,7 @@ export default function Home() {
                 <img src={article.article_img_url} alt={article.title} />
                 <div className='article-info'>
                   <h3>{limitText(article.title, 5)} ...</h3>
-                  <button>{article.topic}</button>
+                  <button className='topic-bt'>{article.topic}</button>
                   <p>{formatDate(article.created_at)}</p>
                 </div>
               </div>
