@@ -5,8 +5,8 @@ const Comment = ({ setComments }) => {
   const [newComment, setNewComment] = useState('');
   const { articleId } = useParams();
   const [postedComment, setPostedComment] = useState(null);
-  // update comment in api
 
+  // update comment in api
   const handleCommentSubmit = (event) => {
     event.preventDefault();
 
@@ -33,20 +33,6 @@ const Comment = ({ setComments }) => {
 
   return (
     <div className='comments'>
-      {postedComment && (
-        <div>
-          <button
-            className='button'
-            onClick={() => {
-              console.log(postedComment);
-              deleteComment(postedComment.comment_id);
-            }}
-          >
-            Delete
-          </button>
-        </div>
-      )}
-
       <form onSubmit={handleCommentSubmit}>
         <textarea
           value={newComment}
